@@ -44,6 +44,23 @@ void addToFrist(node_f **head,int data){
 
 }
 
+void addToEnd(node_f **head, int data){
+    node_f *newNode, *ptr;
+    ptr = *head;
+
+    newNode = (node_f *)malloc(sizeof(node_f));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    while (ptr->next != NULL)
+    {
+        ptr = ptr->next;
+    }
+    
+    ptr->next = newNode;
+
+}
+
 //this func will show the linklist values
 void show(node_f *head){
     node_f *temp = head;
